@@ -218,6 +218,7 @@ This course is published as a series on Substack where each lesson is explained 
 You'll get notified when new lessons are published and receive bonus content that doesn't appear in the repository.
 
 **Follow me on LinkedIn:** [https://www.linkedin.com/in/dheerajsharma14/]
+
 **Subscribe to my YouTube channel:** [https://www.youtube.com/@genaiunplugged]
 
 
