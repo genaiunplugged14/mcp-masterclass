@@ -51,8 +51,8 @@ This is where theory becomes practice. You'll build your first working MCP serve
 
 **Lesson 5: Build Your First MCP Server with Claude Desktop**  
 Step-by-step tutorial to create your own MCP server that Claude Desktop can use to read local files.  
-📖 [Read Lesson 5](YOUR_SUBSTACK_LESSON_5_URL) *(Coming Soon)* 
-📁 Code: [`/lesson-05`](./lesson-05) *(Coming Soon)* 
+📖 [Read Lesson 5](https://genaiunplugged.substack.com/p/how-to-build-an-mcp-server-and-connect)
+📁 Code: [`/lesson-05`](./lesson-05)
 
 ### **Phase 3: Advanced Concepts (Lessons 6-10)**
 
@@ -60,7 +60,7 @@ These lessons take you from simple tools to sophisticated AI systems with collab
 
 **Lesson 6: Multi-Agent Collaboration with MCP**  
 Discover how multiple AI agents can work together like departments in a company, communicating through one protocol.  
-📖 [Read Lesson 6](YOUR_SUBSTACK_LESSON_6_URL) *(Coming Soon)*  
+📖 [Read Lesson 6](#) *(Coming Soon)*  
 📁 Code: [`/lesson-06`](./lesson-06) *(Coming Soon)*
 
 **Lesson 7: Adding Shared Memory**  
