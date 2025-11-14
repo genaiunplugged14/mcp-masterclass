@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "note-reader": {
+      "command": "/FULL/PATH/TO/YOUR/.venv/bin/python",
+      "args": [
+        "/FULL/PATH/TO/YOUR/server.py"
+      ]
+    }
+  }
+}
