@@ -1,0 +1,9 @@
+This is my first MCP server.
+
+MCP lets Claude Desktop connect to tools I create.
+Those tools can read data, write data, or trigger actions.
+
+Now Claude can use my custom tools to help me get work done.
+This opens up endless possibilities for automation and AI assistance.
+
+The patterns I'm learning in this lesson will scale to much more complex systems.
