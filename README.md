@@ -51,7 +51,7 @@ This is where theory becomes practice. You'll build your first working MCP serve
 
 **Lesson 5: Build Your First MCP Server with Claude Desktop**  
 Step-by-step tutorial to create your own MCP server that Claude Desktop can use to read local files.  
-📖 [Read Lesson 5](https://genaiunplugged.substack.com/p/how-to-build-an-mcp-server-and-connect)
+📖 [Read Lesson 5](https://genaiunplugged.substack.com/p/how-to-build-an-mcp-server-and-connect)  
 📁 Code: [`/lesson-05`](./lesson-05)
 
 ### **Phase 3: Advanced Concepts (Lessons 6-10)**
