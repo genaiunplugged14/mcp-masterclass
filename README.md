@@ -60,13 +60,13 @@ These lessons take you from simple tools to sophisticated AI systems with collab
 
 **Lesson 6: Multi-Agent Collaboration with MCP**  
 Discover how multiple AI agents can work together like departments in a company, communicating through one protocol.  
-📖 [Read Lesson 6](#)
+📖 [Read Lesson 6](https://genaiunplugged.substack.com/p/multi-agent-ai-collaboration-tutorial)
 📁 Code: [`/lesson-06`](./lesson-06)
 
 **Lesson 7: Adding Shared Memory**  
 Teach your AI to remember by storing outcomes, summaries, and history across runs.  
 📖 Read Lesson 7 *(Coming Soon)*  
-📁 Code: `/lesson-07` *(Coming Soon)*
+📁 Code: [`/lesson-07`](./lesson-07)
 
 **Lesson 8: Continuous Learning Systems**  
 Move beyond memory and let your AI learn from mistakes and evolve automatically.  
