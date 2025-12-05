@@ -1,0 +1,225 @@
+# Example: Content Researcher Agent with Learning
+
+This file shows an example conversation with a Content Researcher agent that learns from experience.
+
+## Initial Setup (Agent Instructions)
+
+```
+You are a Content Researcher Agent that learns from experience.
+
+Your process:
+1. Before starting any research, use get_learning_insights to see what approaches have worked best
+2. Conduct your research using the strategy that patterns suggest
+3. After completing research, use record_experience to track the outcome
+4. Always learn from patterns and adjust your strategy
+
+Your goal: Continuously improve your research quality by learning what works.
+```
+
+## Example Conversation Flow
+
+### First Research Task (No Prior Learning)
+
+**User:** Research the topic "benefits of morning routines" and provide a summary
+
+**Agent Response:**
+```
+I'll start by checking if I have any learning insights for research tasks.
+
+[Uses get_learning_insights tool]
+
+I don't have enough prior experiences to identify patterns yet. I'll proceed with a general research approach and record the outcome.
+
+[Conducts research using general web search]
+
+Summary:
+- Morning routines improve productivity
+- Consistent wake times regulate circadian rhythm
+- Exercise in the morning boosts energy
+- Studies show 68% of successful people have morning routines
+
+[Uses record_experience tool]
+{
+  "agent_id": "content-researcher",
+  "task_type": "research",
+  "context": "Researching benefits of morning routines",
+  "approach": "general web search",
+  "outcome": "Found general information but lacks depth and specific citations",
+  "success": false,
+  "metrics": {
+    "sources_found": 5,
+    "depth_score": 4,
+    "citation_quality": 3
+  }
+}
+
+Experience recorded. I'll aim for more authoritative sources next time.
+```
+
+### Second Research Task (Starting to Learn)
+
+**User:** Research "impact of sleep on productivity"
+
+**Agent Response:**
+```
+Let me check my learning insights before starting.
+
+[Uses get_learning_insights tool]
+
+Insight found: My previous research lacked depth. Let me try a different approach this time - I'll start with academic sources.
+
+[Conducts research using Google Scholar and peer-reviewed studies]
+
+Summary:
+- Sleep deprivation reduces cognitive performance by 20-40% (Study: Walker et al., 2017)
+- 7-9 hours of sleep optimal for productivity (American Academy of Sleep Medicine)
+- REM sleep consolidates learning and memory (Nature Neuroscience, 2015)
+- Companies reporting wellness programs with sleep education show 15% productivity gains
+
+[Uses record_experience tool]
+{
+  "agent_id": "content-researcher",
+  "task_type": "research",
+  "context": "Researching impact of sleep on productivity",
+  "approach": "academic sources first (Google Scholar, peer-reviewed studies)",
+  "outcome": "High-quality, well-cited information with specific data",
+  "success": true,
+  "metrics": {
+    "sources_found": 8,
+    "depth_score": 9,
+    "citation_quality": 9
+  }
+}
+
+Much better results using academic sources! This approach is working well.
+```
+
+### Third Research Task (Pattern Established)
+
+**User:** Research "remote work effectiveness statistics"
+
+**Agent Response:**
+```
+Let me check my learning insights.
+
+[Uses get_learning_insights tool]
+
+Strong pattern identified:
+- "academic sources first" approach: 100% success rate (1/1 attempts)
+- "general web search" approach: 0% success rate (0/1 attempts)
+
+Recommendation: Use academic sources for research tasks.
+
+I'll follow this successful pattern.
+
+[Conducts research using academic and authoritative sources]
+
+Summary:
+- Stanford study (2020): Remote workers 13% more productive
+- Buffer Report 2023: 97% of remote workers want to continue remotely
+- Gallup data: Remote work reduces commute time by avg 54 minutes/day
+- Harvard Business Review: Remote teams report 25% higher engagement when using async tools
+
+Sources: Stanford HAI, Buffer, Gallup, HBR
+
+[Uses record_experience tool]
+{
+  "agent_id": "content-researcher",
+  "task_type": "research",
+  "context": "Researching remote work effectiveness statistics",
+  "approach": "academic sources first (Stanford, Gallup, HBR)",
+  "outcome": "Excellent quality, authoritative data with clear sources",
+  "success": true,
+  "metrics": {
+    "sources_found": 12,
+    "depth_score": 10,
+    "citation_quality": 10
+  }
+}
+
+Perfect! The academic-first approach continues to deliver high-quality results.
+```
+
+### Fourth Research Task (Continuous Improvement)
+
+**User:** Research "benefits of deep work"
+
+**Agent Response:**
+```
+Checking my learning insights...
+
+[Uses get_learning_insights tool]
+
+Strong patterns identified:
+- "academic sources first": 100% success rate (2/2 attempts), confidence: 0.8
+- Success rate trend: Improving with this approach
+
+Continuing with the proven academic-first strategy.
+
+[Conducts research]
+
+Summary:
+- Cal Newport's research: Deep work produces work quality of Avg_Work * (1 + Deep_Focus_Hours)
+- MIT study: Deep work sessions increase output quality by 40%
+- Knowledge workers average only 1-2 hours daily deep work (RescueTime data, 2023)
+- Companies implementing "deep work blocks" see 30% faster project completion (McKinsey)
+
+[Uses record_experience tool]
+{
+  "agent_id": "content-researcher",
+  "task_type": "research",
+  "context": "Researching benefits of deep work",
+  "approach": "academic sources and industry research",
+  "outcome": "High-quality findings with quantitative data",
+  "success": true,
+  "metrics": {
+    "sources_found": 10,
+    "depth_score": 9,
+    "citation_quality": 9
+  }
+}
+
+Pattern confirmed: Academic-first approach consistently delivers excellent research results.
+```
+
+### Analyzing Learning Progress
+
+**User:** Show me your learning analysis
+
+**Agent Response:**
+```
+[Uses analyze_learning_patterns tool with agent_id="content-researcher"]
+
+Learning Analysis (Last 30 days):
+- Total experiences: 4
+- Overall success rate: 75% (3/4 successful)
+- Task type breakdown:
+  - Research tasks: 4 attempts, 75% success rate
+
+Best approaches:
+1. "academic sources first": 100% success rate (3 attempts)
+   - Average depth score: 9.3
+   - Average citation quality: 9.3
+
+Worst approaches:
+1. "general web search": 0% success rate (1 attempt)
+   - Average depth score: 4
+   - Average citation quality: 3
+
+Recommendation: Continue using academic sources as primary research strategy. The pattern is strong and consistent.
+
+My learning journey shows clear improvement:
+- Started with surface-level research (40% depth)
+- Switched to academic sources after first failure
+- Now consistently delivering high-quality, well-cited research (90%+ depth)
+```
+
+## Key Takeaways from This Example
+
+1. **Learning from Failure:** First attempt used general search, got poor results, recorded failure
+2. **Pattern Recognition:** After 2-3 experiences, system identified that academic sources work better
+3. **Automatic Improvement:** Agent now always checks insights before starting research
+4. **Confidence Building:** More experiences = stronger patterns = better recommendations
+5. **Measurable Progress:** Metrics track improvement over time (depth scores, citation quality)
+
+This is what agent learning looks like in practice!
