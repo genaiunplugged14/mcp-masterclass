@@ -1,5 +1,10 @@
 # Lesson 8: Agent Learning & Experience Memory Systems
 
+> **Updated September 2026.** This code was rewritten for MCP Python SDK version 2, where
+> `FastMCP` became `MCPServer`. If you cloned this repo before then, read
+> [MIGRATION.md](../MIGRATION.md) first. Verified against mcp 2.1.1.
+
+
 This folder contains the complete working code for Lesson 8 of the MCP Masterclass. You'll build agents that learn from their experiences, remember what works, and automatically improve their strategies over time.
 
 ## What You'll Build

@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# Data these servers write while you use them. Yours, not the course's.
+lesson-06/workspace/
+lesson-07/shared_memory.json
+lesson-08/learning_data.json

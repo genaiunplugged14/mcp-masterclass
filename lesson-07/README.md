@@ -1,5 +1,10 @@
 # Lesson 7: Adding Shared Memory
 
+> **Updated September 2026.** This code was rewritten for MCP Python SDK version 2, where
+> `FastMCP` became `MCPServer`. If you cloned this repo before then, read
+> [MIGRATION.md](../MIGRATION.md) first. Verified against mcp 2.1.1.
+
+
 This folder contains the complete working code for Lesson 7 of the MCP Masterclass. You'll add shared memory to the multi-agent system from Lesson 6, enabling agents to remember insights, build on past work, and improve over time.
 
 ## 📖 Read the Full Lesson

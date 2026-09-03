@@ -1,46 +1,39 @@
-"""
-Environment Setup Verification Script for Lesson 8
-
-This script checks that all required MCP components are installed correctly.
-Run this before starting the lesson to catch any installation issues early.
-
-If you see errors, make sure you:
-1. Activated the virtual environment
-2. Ran 'pip install -r requirements.txt'
-3. Are using Python 3.10 or higher
-"""
-
+"""Run this before you start. It tells you whether your setup is ready."""
+import importlib.util
 import sys
+from pathlib import Path
 
-# Check Python version
-python_version = sys.version_info
-if python_version < (3, 10):
-    print(f"✗ Python version {python_version.major}.{python_version.minor} detected")
-    print("  MCP requires Python 3.10 or higher")
-    print("  Please upgrade Python and try again")
-    sys.exit(1)
+ok = True
+
+if sys.version_info < (3, 10):
+    print(f"FAIL  Python is {sys.version_info.major}.{sys.version_info.minor}. You need 3.10 or newer.")
+    ok = False
 else:
-    print(f"✓ Python {python_version.major}.{python_version.minor}.{python_version.micro} detected")
+    print(f"OK    Python {sys.version_info.major}.{sys.version_info.minor}")
 
-# Check MCP SDK installation
 try:
-    from mcp.server import Server
-    from mcp.server.stdio import stdio_server
-    from mcp.types import Tool, TextContent
-    
-    print("✓ MCP SDK is installed correctly!")
-    print("✓ All required components are available")
-    print("\nYou're ready to build learning agents with MCP!")
-    print("\nNext steps:")
-    print("1. Configure Claude Desktop (see README.md)")
-    print("2. Restart Claude Desktop")
-    print("3. Start testing the learning tools")
-    
+    from mcp.server import MCPServer  # noqa: F401
+    print("OK    The mcp package is installed, and MCPServer imports.")
 except ImportError as e:
-    print("✗ MCP SDK installation issue detected:")
-    print(f"  Error: {e}")
-    print("\nPlease make sure you:")
-    print("  1. Activated the virtual environment")
-    print("  2. Ran: pip install -r requirements.txt")
-    print("  3. Are using Python 3.10 or higher")
-    sys.exit(1)
+    print(f"FAIL  {e}")
+    print('      Run: pip install "mcp[cli]>=2.1,<3"')
+    print("      If you see the name FastMCP anywhere, you are on the old version 1.")
+    print("      Read MIGRATION.md in the top folder of this repo.")
+    ok = False
+
+try:
+    spec = importlib.util.spec_from_file_location("server", Path(__file__).parent / "server.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    if hasattr(module, "mcp"):
+        print("OK    server.py loads and the server is set up.")
+    else:
+        print("FAIL  server.py loaded but has no server object called mcp.")
+        ok = False
+except Exception as e:
+    print(f"FAIL  server.py did not load: {type(e).__name__}: {e}")
+    ok = False
+
+print()
+print("You are ready." if ok else "Fix the FAIL lines above, then run this again.")
+sys.exit(0 if ok else 1)

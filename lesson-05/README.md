@@ -1,5 +1,10 @@
 # Lesson 5: Build Your First MCP Server with Claude Desktop
 
+> **Updated September 2026.** This code was rewritten for MCP Python SDK version 2, where
+> `FastMCP` became `MCPServer`. If you cloned this repo before then, read
+> [MIGRATION.md](../MIGRATION.md) first. Verified against mcp 2.1.1.
+
+
 This folder contains the complete working code for Lesson 5 of the MCP Masterclass. You'll build a simple MCP server that exposes a tool for reading text files, then connect it to Claude Desktop so Claude can use your tool in real conversations.
 
 ## 📖 Read the Full Lesson
@@ -12,7 +17,7 @@ The article explains all the concepts, provides detailed context, and walks thro
 ## 📁 What's in This Folder
 
 - **`server.py`** - The complete MCP server with the read_note tool
-- **`sample_note.txt`** - Example text file that the tool will read
+- **`notes/`** - Your notes folder. The `read_note` tool reads files from in here.
 - **`check_setup.py`** - Script to verify your environment is ready
 - **`requirements.txt`** - Python packages needed for this lesson
 - **`claude_desktop_config.json.example`** - Template configuration for Claude Desktop
@@ -129,7 +134,7 @@ After restarting Claude Desktop, start a new conversation. Look at the bottom ri
 
 Now ask Claude to use your tool. Try this message:
 
-> "Can you use the read_note tool to read sample_note.txt?"
+> "Can you use the read_note tool to read rules.txt?"
 
 Claude will ask for permission to use the tool. Click "Allow for This Chat" and watch as your MCP server runs in the background, reads the file, and returns the content to Claude. You just successfully built and deployed your first MCP server.
 
@@ -141,7 +146,7 @@ Now that you have a working MCP server, try these experiments to deepen your und
 
 **Ask for summaries:** Instead of just reading the file, ask Claude to read it and then summarize it in one sentence. This shows how Claude uses your tool's output to accomplish more complex tasks.
 
-**Try multiple files:** Ask Claude to "read both sample_note.txt and project_notes.txt and compare them." Watch as Claude calls your tool twice in a single conversation to gather all the information it needs.
+**Try multiple files:** Ask Claude to "read both rules.txt and pricing.txt and compare them." Watch it call your tool twice in one conversation to gather everything it needs.
 
 **Break something on purpose:** Change a line in server.py and save it. Restart Claude Desktop and see what happens. Learning to read error messages and debug issues is an essential skill. The troubleshooting section below will help you fix common problems.
 
@@ -161,9 +166,9 @@ Fourth, check the Claude Desktop logs for error messages. On macOS, logs are in 
 
 ### Claude says the file wasn't found
 
-This happens when the file path is wrong or the file doesn't exist where the server expects it. The server looks for files in the same folder where server.py lives. Make sure sample_note.txt is in the lesson-05 folder alongside server.py.
+This happens when the file name is wrong, or the file is not where the server expects it. The server looks inside the `notes/` folder that sits next to `server.py`. Make sure your file is in there.
 
-You can verify this by opening your terminal, navigating to the lesson-05 folder, and running `ls` on macOS or Linux, or `dir` on Windows. You should see both server.py and sample_note.txt in the list.
+You can check by opening your terminal in the lesson-05 folder and running `ls notes` on macOS or Linux, or `dir notes` on Windows. Your file should be listed.
 
 ### The tool appears but crashes when I use it
 
@@ -188,7 +193,7 @@ To activate it again, run the activation command from Step 2 above. You need to 
 
 The server.py file is heavily commented to explain how each part works. Open it in your code editor and read through the comments to understand the structure. The key concepts are:
 
-The server instance is created with a name that identifies it to Claude Desktop. The list_tools handler tells Claude what tools are available and what arguments they accept. The call_tool handler actually executes the tool when Claude requests it. The stdio_server function sets up the communication channel between Claude Desktop and your server. And the main function ties everything together and starts the server running.
+`MCPServer("desk")` creates the server and gives it a name Claude Desktop can see. The `@mcp.tool()` decorator marks a function as something Claude is allowed to call. The type hints on that function become the tool's schema, so there is no JSON to write by hand, and the docstring becomes the description Claude reads when it decides whether to use the tool. `mcp.run(transport="stdio")` starts it and connects it to Claude Desktop. Under SDK version 1 this same server needed separate `list_tools` and `call_tool` handlers plus a hand-written schema, which is why it used to be 165 lines instead of 14.
 
 These same patterns appear in every MCP server you'll build throughout this course. Master them here in Lesson 5, and you'll be ready for the more complex servers in later lessons.
 

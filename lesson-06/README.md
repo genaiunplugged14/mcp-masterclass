@@ -1,5 +1,10 @@
 # Lesson 6: Multi-Agent Collaboration with MCP
 
+> **Updated September 2026.** This code was rewritten for MCP Python SDK version 2, where
+> `FastMCP` became `MCPServer`. If you cloned this repo before then, read
+> [MIGRATION.md](../MIGRATION.md) first. Verified against mcp 2.1.1.
+
+
 This folder contains the complete working code for Lesson 6 of the MCP Masterclass. You'll build a multi-agent system where a Researcher agent and a Writer agent collaborate through a shared MCP server to create well-researched, well-written content.
 
 ## 📖 Read the Full Lesson

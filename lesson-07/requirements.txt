@@ -1,1 +1,3 @@
-mcp>=1.0.0
+# Pinned to the major version these lessons were written against.
+# A bare "mcp>=1.0.0" lets tomorrow's major release in and breaks this code silently.
+mcp[cli]>=2.1,<3
