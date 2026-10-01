@@ -1,0 +1,6 @@
+# Pinned on purpose. A lower bound alone is not a pin, it is a delayed breakage.
+# The first version of this course said mcp>=1.0.0, which later resolved to 2.x
+# and broke every code sample it shipped with.
+mcp>=2.1,<3
+google-api-python-client>=2.0,<3
+google-auth>=2.0,<3

@@ -1,0 +1,44 @@
+THE OFFICIAL GOOGLE DRIVE SERVER, FOR THE CURIOUS
+=================================================
+
+You do not need this for the course. Lesson 11 shows it running, and that
+is enough. These notes are here in case you want to see the wall yourself.
+
+WHAT IT IS
+----------
+A reference server from the people who look after MCP. It has 1 tool,
+search, and it offers your files as read-only resources.
+
+Its source asks Google for this scope and no other:
+
+    https://www.googleapis.com/auth/drive.readonly
+
+So it can read every file you can read, and it can change none of them.
+
+WHERE IT LIVES NOW
+------------------
+It has been retired. The code sits in the archive of reference servers:
+
+    https://github.com/modelcontextprotocol/servers-archived
+
+Look under src/gdrive. The package still installs, with a warning that it
+is no longer supported.
+
+WHY THE COURSE DOES NOT ASK YOU TO INSTALL IT
+---------------------------------------------
+It cannot use the service account key from lesson 4. It signs in as you,
+which needs all of this first:
+
+    1. An OAuth consent screen in your Google Cloud project
+    2. The drive.readonly scope added to that screen
+    3. An OAuth client id of the type Desktop App
+    4. The downloaded keys file, renamed to gcp-oauth.keys.json
+    5. A sign in step in your browser, run once with the auth argument
+
+The full steps are in the README under src/gdrive in the archive above.
+Follow that page and not a copy of it, because it is the source.
+
+WHAT YOU WILL SEE
+-----------------
+Claude can search your Drive and read a draft. Ask it to fix a typo and
+it has no tool to do that with. That is the gap Scribe fills.

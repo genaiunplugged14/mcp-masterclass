@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/FULL/PATH/TO/scribe"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"]
+    },
+    "scribe": {
+      "command": "/FULL/PATH/TO/scribe/.venv/bin/python",
+      "args": ["/FULL/PATH/TO/scribe/scribe_server.py"],
+      "env": {
+        "SCRIBE_FOLDER_ID": "paste your folder id here",
+        "SCRIBE_KEY": "/FULL/PATH/TO/scribe/key.json"
+      }
+    }
+  }
+}
