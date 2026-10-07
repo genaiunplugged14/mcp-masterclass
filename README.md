@@ -10,15 +10,17 @@ Course hub: [genaiunplugged.com/courses/mcp](https://www.genaiunplugged.com/cour
 
 ## Watch
 
-One video per module, with chapters for every lesson. The lesson pages on the course site carry
-the same video cued to the lesson, the full transcript, every code block, and the downloads.
+Modules 1 and 2 are their own videos. Modules 3 and 4 live inside the
+[full course video](https://www.youtube.com/watch?v=UYasOw2JBT4), all 30 lessons in one 2.5 hour
+video with a chapter per lesson. The lesson pages on the course site carry the video cued to the
+lesson, the full transcript, every code block, and the downloads.
 
 | Module | Video |
 |---|---|
 | 1. The Whole Idea | [Watch on YouTube](https://www.youtube.com/watch?v=EcC2Bz6oYyo) |
 | 2. Your First Server | [Watch on YouTube](https://www.youtube.com/watch?v=qQma5d3UMbM) |
-| 3. Make It Trustworthy | [Watch on YouTube](https://www.youtube.com/watch?v=V-ZQaAbEW5E), live on 2026-10-08 |
-| 4. Ship It | in production |
+| 3. Make It Trustworthy | inside the [full course video](https://www.youtube.com/watch?v=UYasOw2JBT4&t=4723s), live on 2026-10-08 |
+| 4. Ship It | inside the [full course video](https://www.youtube.com/watch?v=UYasOw2JBT4&t=6652s), live on 2026-10-08 |
 
 Playlist: [MCP Masterclass](https://www.youtube.com/playlist?list=PLfAS-Fp8RUIg)
 
