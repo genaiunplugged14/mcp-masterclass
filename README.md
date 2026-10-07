@@ -73,17 +73,18 @@ Checkpoint: [`checkpoints/module-3/`](checkpoints/module-3) or
 
 ### Module 4: Ship It
 
-Checkpoint: ships with Module 4.
+Checkpoint: [`checkpoints/module-4/`](checkpoints/module-4) or
+[scribe-checkpoint-m4.zip](https://www.genaiunplugged.com/academy/mcp-masterclass/checkpoints/scribe-checkpoint-m4.zip)
 
 | # | Lesson | |
 |---|---|---|
-| 24 | The last manual step | coming soon |
-| 25 | Add Substack: a whole new service, the same 5 steps | coming soon |
-| 26 | Draft to published, end to end | coming soon |
-| 27 | Off the laptop: the pipe and the web address | coming soon |
-| 28 | Deploy it, and publish it so others can install it | coming soon |
-| 29 | Module 4 recap | coming soon |
-| 30 | What you have, what breaks next, where to go | coming soon |
+| 24 | The last manual step | [read](https://www.genaiunplugged.com/courses/mcp/lessons/the-last-manual-step/) |
+| 25 | Add Substack: a whole new service, the same 5 steps | [read](https://www.genaiunplugged.com/courses/mcp/lessons/add-substack-the-same-5-steps/) |
+| 26 | Draft to published, end to end | [read](https://www.genaiunplugged.com/courses/mcp/lessons/draft-to-published-end-to-end/) |
+| 27 | Off the laptop: the pipe and the web address | [read](https://www.genaiunplugged.com/courses/mcp/lessons/off-the-laptop-the-pipe-and-the-web-address/) |
+| 28 | Deploy it, and publish it so others can install it | [read](https://www.genaiunplugged.com/courses/mcp/lessons/deploy-it-and-publish-it/) |
+| 29 | Module 4 recap | [read](https://www.genaiunplugged.com/courses/mcp/lessons/module-4-recap/) |
+| 30 | What you have, what breaks next, where to go | [read](https://www.genaiunplugged.com/courses/mcp/lessons/what-you-have-what-breaks-next-where-to-go/) |
 
 ## Checkpoints
 

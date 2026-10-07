@@ -12,7 +12,7 @@ The same files ship as zips from the course site:
 | 1 | Lesson 1 | [`module-1/`](module-1) | [scribe-checkpoint-m1.zip](https://www.genaiunplugged.com/academy/mcp-masterclass/checkpoints/scribe-checkpoint-m1.zip) |
 | 2 | Lesson 11 | [`module-2/`](module-2) | [scribe-checkpoint-m2.zip](https://www.genaiunplugged.com/academy/mcp-masterclass/checkpoints/scribe-checkpoint-m2.zip) |
 | 3 | Lesson 16 | [`module-3/`](module-3) | [scribe-checkpoint-m3.zip](https://www.genaiunplugged.com/academy/mcp-masterclass/checkpoints/scribe-checkpoint-m3.zip) |
-| 4 | Lesson 24 | ships with Module 4 | ships with Module 4 |
+| 4 | Lesson 24 | [`module-4/`](module-4) | [scribe-checkpoint-m4.zip](https://www.genaiunplugged.com/academy/mcp-masterclass/checkpoints/scribe-checkpoint-m4.zip) |
 
 ## What is in each one
 
@@ -49,7 +49,20 @@ server itself is not in here on purpose; you write it.
   `RESULT: Scribe remembers.`
 - `claude_desktop_config.json` is unchanged from module 2.
 
-**Module 4**: ships with Module 4, which is in production.
+**Module 4** (`module-4/`): Scribe as module 3 left it, plus the Substack proof and the files lesson 28 needs.
+
+- `scribe_server.py` is the finished module 3 server: 5 tools, 2 resources, 1 prompt, with the
+  guard, the question before every write and the memory. Module 4 adds to it.
+- `requirements.txt` is now 4 lines. The fourth, `requests`, is what lesson 25 adds, and Render
+  reads this file in lesson 28.
+- `prove_substack.py` proves the public read needs no login, makes a Substack draft from your
+  draft, checks with Substack that it is only a draft, and deletes it again (lesson 26). Nothing is
+  published and nobody is emailed.
+- `break_it.py` is the same 3 attacks from lesson 18. Run it after every change in this module.
+- `claude_desktop_config.json` carries the 2 new lines from lesson 25 (your Substack name and
+  your cookie, which you fill in yourself).
+- `.gitignore` is the 3 lines lesson 28 needs before the code goes on GitHub.
+- `REGISTRY-NOTES.txt` is the one-minute registry pointer from lesson 28, for reading only.
 
 ## What you still have to supply
 

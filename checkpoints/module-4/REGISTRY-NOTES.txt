@@ -1,0 +1,84 @@
+THE MCP REGISTRY: THE POINTER FROM LESSON 28
+============================================
+
+There is a public list of MCP servers, run by the people who run the
+protocol: https://registry.modelcontextprotocol.io. As of 2026-10-01 it
+is in PREVIEW. Its own docs say breaking changes or data resets may
+occur. Nothing here is required for anything in the course.
+
+THE ONE RULE FIRST
+------------------
+NEVER LIST YOUR OWN SCRIBE ADDRESS.
+
+A "remotes" entry in server.json is an invitation for the whole world to
+connect to that URL. Your Scribe has no login of its own, and its address
+is wired to YOUR Drive folder and YOUR Substack. Listing it publishes the
+password from lesson 28.
+
+The registry is for a server that OTHER PEOPLE run themselves, with their
+own key, their own folder and their own cookie. For Scribe that means a
+package people install and run, and no "remotes" at all.
+
+Publish the package, never your address.
+
+THE 4 COMMANDS (if you ever want strangers running their own Scribe)
+--------------------------------------------------------------------
+From modelcontextprotocol.io/registry/quickstart:
+
+    brew install mcp-publisher          # or the release tarball
+    mcp-publisher init                  # writes a server.json
+    mcp-publisher login github          # name must start io.github.<you>/
+    mcp-publisher publish
+
+The server.json below validates against the registry's published schema
+(static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json).
+Two things the schema taught: "description" is capped at 100 characters,
+and unknown "_meta" keys are silently dropped.
+
+A SAMPLE server.json (a PACKAGE, no remotes)
+--------------------------------------------
+This is the shape for a server people run themselves. It assumes you
+have put Scribe on PyPI as a package called scribe-mcp, which is a
+separate job (not covered by the course).
+
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.your-github-name/scribe",
+  "title": "Scribe",
+  "description": "Edits drafts in a Google Drive folder, asks before it writes, and sends a draft to Substack.",
+  "version": "4.0.0",
+  "repository": {
+    "url": "https://github.com/your-github-name/scribe",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "pypi",
+      "registryBaseUrl": "https://pypi.org",
+      "identifier": "scribe-mcp",
+      "version": "4.0.0",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        { "name": "SCRIBE_FOLDER_ID", "description": "Drive folder id", "isRequired": true },
+        { "name": "SCRIBE_KEY", "description": "path to the service account key", "isRequired": true },
+        { "name": "SCRIBE_SUBSTACK", "description": "publication name", "isRequired": false },
+        { "name": "SCRIBE_SUBSTACK_COOKIE", "description": "substack.sid cookie", "isRequired": false, "isSecret": true }
+      ]
+    }
+  ]
+}
+
+WHAT A "remotes" ENTRY LOOKS LIKE, SO YOU RECOGNISE IT AND LEAVE IT OUT
+----------------------------------------------------------------------
+  "remotes": [
+    { "type": "streamable-http", "url": "https://scribe-your-name.onrender.com/mcp" }
+  ]
+
+The registry's own page says a remote server MUST be publicly reachable
+at that URL, should use streamable-http, and that the SSE transport is
+deprecated. For Scribe, publicly reachable means anyone can edit your
+drafts. Do not add this block.
+
+Validate the sample before publishing anything: the mcp-publisher tool
+checks server.json against the schema on publish, and the schema URL
+above can be used with any JSON Schema validator.
